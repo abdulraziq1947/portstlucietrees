@@ -1,0 +1,130 @@
+[
+  {
+    "ok": true,
+    "status": 200,
+    "final": "https://www.portstlucietrees.com/",
+    "url": "http://portstlucietrees.com/",
+    "location_chain_note": null,
+    "content_type": "text/html; charset=UTF-8",
+    "x_redirect": {
+      "cf-ray": "a49948f86b0f1b7e-MAN",
+      "server": "cloudflare"
+    },
+    "bytes": 74478,
+    "snippet": "<!DOCTYPE html>\n<html lang=\"en\">\n\t<head>\n\t\t<title>Tree Removal, Tree Care Services, Tree Services, Port St Lucie, FL</title><meta property=\"og:site_name\" content=\"Tree Service Port St Lucie\" />\n<meta "
+  },
+  {
+    "ok": true,
+    "status": 200,
+    "final": "https://www.portstlucietrees.com/",
+    "url": "http://www.portstlucietrees.com/",
+    "location_chain_note": null,
+    "content_type": "text/html; charset=UTF-8",
+    "x_redirect": {
+      "cf-ray": "a49948fb4abeb370-MAN",
+      "server": "cloudflare"
+    },
+    "bytes": 74478,
+    "snippet": "<!DOCTYPE html>\n<html lang=\"en\">\n\t<head>\n\t\t<title>Tree Removal, Tree Care Services, Tree Services, Port St Lucie, FL</title><meta property=\"og:site_name\" content=\"Tree Service Port St Lucie\" />\n<meta "
+  },
+  {
+    "ok": true,
+    "status": 200,
+    "final": "https://www.portstlucietrees.com/",
+    "url": "https://portstlucietrees.com/",
+    "location_chain_note": null,
+    "content_type": "text/html; charset=UTF-8",
+    "x_redirect": {
+      "cf-ray": "a49948fd4d84b3cf-MAN",
+      "server": "cloudflare"
+    },
+    "bytes": 74478,
+    "snippet": "<!DOCTYPE html>\n<html lang=\"en\">\n\t<head>\n\t\t<title>Tree Removal, Tree Care Services, Tree Services, Port St Lucie, FL</title><meta property=\"og:site_name\" content=\"Tree Service Port St Lucie\" />\n<meta "
+  },
+  {
+    "ok": true,
+    "status": 200,
+    "final": "https://www.portstlucietrees.com/",
+    "url": "https://www.portstlucietrees.com/",
+    "location_chain_note": null,
+    "content_type": "text/html; charset=UTF-8",
+    "x_redirect": {
+      "cf-ray": "a49948fddd07221f-MAN",
+      "server": "cloudflare"
+    },
+    "bytes": 74478,
+    "snippet": "<!DOCTYPE html>\n<html lang=\"en\">\n\t<head>\n\t\t<title>Tree Removal, Tree Care Services, Tree Services, Port St Lucie, FL</title><meta property=\"og:site_name\" content=\"Tree Service Port St Lucie\" />\n<meta "
+  },
+  {
+    "ok": true,
+    "status": 200,
+    "final": "https://www.portstlucietrees.com/robots.txt",
+    "url": "https://www.portstlucietrees.com/robots.txt",
+    "location_chain_note": null,
+    "content_type": "text/plain; charset=UTF-8",
+    "x_redirect": {
+      "cf-ray": "a49948fe69dceb14-MAN",
+      "server": "cloudflare"
+    },
+    "bytes": 201,
+    "snippet": "Sitemap: http://www.portstlucietrees.com/sitemap.xml\n\nUser-agent: NerdyBot\nDisallow: /\n\nUser-agent: dotbot\nCrawl-delay: 10\n\nUser-agent: *\nDisallow: /ajax/\nDisallow: /apps/\nDisallow: /confirmation.html"
+  },
+  {
+    "ok": true,
+    "status": 200,
+    "final": "https://www.portstlucietrees.com/sitemap.xml",
+    "url": "https://www.portstlucietrees.com/sitemap.xml",
+    "location_chain_note": null,
+    "content_type": "text/xml; charset=UTF-8",
+    "x_redirect": {
+      "cf-ray": "a49948fffb80f060-MAN",
+      "server": "cloudflare"
+    },
+    "bytes": 3752,
+    "snippet": "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n<urlset xmlns=\"http://www.sitemaps.org/schemas/sitemap/0.9\">\n  <url>\n    <loc>http://www.portstlucietrees.com/about.html</loc>\n    <lastmod>2026-08-22T17:01:00+0"
+  },
+  {
+    "ok": true,
+    "status": 200,
+    "final": "https://www.portstlucietrees.com/sitemap.xml",
+    "url": "https://portstlucietrees.com/sitemap.xml",
+    "location_chain_note": null,
+    "content_type": "text/xml; charset=UTF-8",
+    "x_redirect": {
+      "cf-ray": "a4994901fbc35ef8-MAN",
+      "server": "cloudflare"
+    },
+    "bytes": 3752,
+    "snippet": "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n<urlset xmlns=\"http://www.sitemaps.org/schemas/sitemap/0.9\">\n  <url>\n    <loc>http://www.portstlucietrees.com/about.html</loc>\n    <lastmod>2026-08-22T17:01:00+0"
+  },
+  {
+    "ok": false,
+    "status": 404,
+    "final": "https://www.portstlucietrees.com/sitemap_index.xml",
+    "error": "HTTP Error 404: Not Found",
+    "url": "https://www.portstlucietrees.com/sitemap_index.xml",
+    "location_chain_note": null,
+    "content_type": "text/html; charset=UTF-8",
+    "x_redirect": {
+      "cf-ray": "a49949026cb426aa-MAN",
+      "server": "cloudflare"
+    },
+    "bytes": 3802,
+    "snippet": "<!DOCTYPE html PUBLIC \"-//W3C//DTD XHTML 1.0 Strict//EN\" \"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd\">\n<html xmlns=\"http://www.w3.org/1999/xhtml\" xml:lang=\"en\">\n<head><script src=\"/gdpr/gdprscr"
+  },
+  {
+    "ok": false,
+    "status": 404,
+    "final": "https://www.portstlucietrees.com/wp-sitemap.xml",
+    "error": "HTTP Error 404: Not Found",
+    "url": "https://www.portstlucietrees.com/wp-sitemap.xml",
+    "location_chain_note": null,
+    "content_type": "text/html; charset=UTF-8",
+    "x_redirect": {
+      "cf-ray": "a49949040ca12f8e-MAN",
+      "server": "cloudflare"
+    },
+    "bytes": 3802,
+    "snippet": "<!DOCTYPE html PUBLIC \"-//W3C//DTD XHTML 1.0 Strict//EN\" \"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd\">\n<html xmlns=\"http://www.w3.org/1999/xhtml\" xml:lang=\"en\">\n<head><script src=\"/gdpr/gdprscr"
+  }
+]

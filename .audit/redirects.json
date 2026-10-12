@@ -1,0 +1,161 @@
+[
+  {
+    "start": "http://portstlucietrees.com/",
+    "hops": [
+      {
+        "status": 301,
+        "url": "http://portstlucietrees.com/",
+        "location": "http://www.portstlucietrees.com/",
+        "content_type": "text/html; charset=iso-8859-1",
+        "bytes": 240
+      },
+      {
+        "status": 301,
+        "url": "http://www.portstlucietrees.com/",
+        "location": "https://www.portstlucietrees.com/",
+        "content_type": "text/html; charset=utf-8",
+        "bytes": 378
+      },
+      {
+        "status": 200,
+        "url": "https://www.portstlucietrees.com/",
+        "location": null,
+        "content_type": "text/html; charset=UTF-8",
+        "bytes": 74478
+      }
+    ]
+  },
+  {
+    "start": "http://www.portstlucietrees.com/",
+    "hops": [
+      {
+        "status": 301,
+        "url": "http://www.portstlucietrees.com/",
+        "location": "https://www.portstlucietrees.com/",
+        "content_type": "text/html; charset=utf-8",
+        "bytes": 378
+      },
+      {
+        "status": 200,
+        "url": "https://www.portstlucietrees.com/",
+        "location": null,
+        "content_type": "text/html; charset=UTF-8",
+        "bytes": 74478
+      }
+    ]
+  },
+  {
+    "start": "https://portstlucietrees.com/",
+    "hops": [
+      {
+        "status": 301,
+        "url": "https://portstlucietrees.com/",
+        "location": "https://www.portstlucietrees.com/",
+        "content_type": "text/html; charset=iso-8859-1",
+        "bytes": 241
+      },
+      {
+        "status": 200,
+        "url": "https://www.portstlucietrees.com/",
+        "location": null,
+        "content_type": "text/html; charset=UTF-8",
+        "bytes": 74478
+      }
+    ]
+  },
+  {
+    "start": "https://www.portstlucietrees.com/",
+    "hops": [
+      {
+        "status": 200,
+        "url": "https://www.portstlucietrees.com/",
+        "location": null,
+        "content_type": "text/html; charset=UTF-8",
+        "bytes": 74478
+      }
+    ]
+  },
+  {
+    "start": "http://portstlucietrees.com/index.html",
+    "hops": [
+      {
+        "status": 301,
+        "url": "http://portstlucietrees.com/index.html",
+        "location": "http://www.portstlucietrees.com/index.html",
+        "content_type": "text/html; charset=iso-8859-1",
+        "bytes": 250
+      },
+      {
+        "status": 301,
+        "url": "http://www.portstlucietrees.com/index.html",
+        "location": "https://www.portstlucietrees.com/index.html",
+        "content_type": "text/html; charset=utf-8",
+        "bytes": 418
+      },
+      {
+        "status": 200,
+        "url": "https://www.portstlucietrees.com/index.html",
+        "location": null,
+        "content_type": "text/html; charset=UTF-8",
+        "bytes": 74478
+      }
+    ]
+  },
+  {
+    "start": "https://portstlucietrees.com/index.html",
+    "hops": [
+      {
+        "status": 301,
+        "url": "https://portstlucietrees.com/index.html",
+        "location": "https://www.portstlucietrees.com/index.html",
+        "content_type": "text/html; charset=iso-8859-1",
+        "bytes": 251
+      },
+      {
+        "status": 200,
+        "url": "https://www.portstlucietrees.com/index.html",
+        "location": null,
+        "content_type": "text/html; charset=UTF-8",
+        "bytes": 74478
+      }
+    ]
+  },
+  {
+    "start": "http://www.portstlucietrees.com/about.html",
+    "hops": [
+      {
+        "status": 301,
+        "url": "http://www.portstlucietrees.com/about.html",
+        "location": "https://www.portstlucietrees.com/about.html",
+        "content_type": "text/html; charset=utf-8",
+        "bytes": 418
+      },
+      {
+        "status": 200,
+        "url": "https://www.portstlucietrees.com/about.html",
+        "location": null,
+        "content_type": "text/html; charset=UTF-8",
+        "bytes": 57569
+      }
+    ]
+  },
+  {
+    "start": "https://portstlucietrees.com/about.html",
+    "hops": [
+      {
+        "status": 301,
+        "url": "https://portstlucietrees.com/about.html",
+        "location": "https://www.portstlucietrees.com/about.html",
+        "content_type": "text/html; charset=iso-8859-1",
+        "bytes": 251
+      },
+      {
+        "status": 200,
+        "url": "https://www.portstlucietrees.com/about.html",
+        "location": null,
+        "content_type": "text/html; charset=UTF-8",
+        "bytes": 57569
+      }
+    ]
+  }
+]
