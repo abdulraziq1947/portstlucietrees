@@ -142,9 +142,9 @@ body.nav-open .mobile-bar { visibility: hidden; }
 
 .brand img {
   width: 46px;
-  height: auto;
-  border-radius: 8px;
-  background: #f4f1ea;
+  height: 46px;
+  border-radius: 10px;
+  background: transparent;
 }
 
 .brand small {
@@ -464,10 +464,46 @@ h1, h2, h3 {
 }
 
 .service-card div,
-.feature div { padding: 1rem 1.15rem 1.15rem; }
+.feature div {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  padding: 1rem 1.15rem 1.15rem;
+}
 
 .service-card h2,
-.feature h2 { margin: 0 0 0.35rem; font-size: 1.55rem; }
+.feature h2 {
+  margin: 0 0 0.35rem;
+  font-size: 1.45rem;
+  line-height: 1.15;
+  min-height: 2.3em;
+}
+
+.service-card > div > p:not(.card-link) {
+  min-height: 4.5em;
+}
+
+.service-card .card-link {
+  margin-top: auto;
+  margin-bottom: 0;
+}
+
+.review-list { display: grid; gap: 1rem; }
+
+.review {
+  margin: 0;
+  background: var(--card);
+  border: 1px solid var(--line);
+  border-radius: 16px;
+  padding: 1.15rem 1.25rem;
+}
+
+.review p { margin: 0 0 0.85rem; }
+
+.review footer {
+  color: var(--muted);
+  font-size: 0.92rem;
+}
 
 .service-card h2 a,
 .feature h2 a { color: inherit; text-decoration: none; }
@@ -510,6 +546,26 @@ h1, h2, h3 {
 
 .prose h2 { margin-top: 1.8rem; }
 
+.prose ol.plain-list,
+.prose ul.plain-list {
+  display: block;
+  margin: 0 0 1rem;
+  padding-left: 1.25rem;
+  list-style: disc;
+}
+
+.prose ol.plain-list { list-style: decimal; }
+
+.prose .plain-list li {
+  display: list-item;
+  margin: 0 0 0.45rem;
+  padding: 0;
+  min-height: 0;
+  background: none;
+  border: 0;
+  border-radius: 0;
+}
+
 .prose ul, .place-list {
   margin: 0 0 1rem;
   padding: 0;
@@ -537,6 +593,17 @@ h1, h2, h3 {
   padding: 0.25rem 0.75rem;
   border-radius: 999px;
   background: var(--paper-2);
+}
+
+.prose .plain-list li,
+.prose .plain-list li:not(:has(a)) {
+  display: list-item;
+  margin: 0 0 0.45rem;
+  padding: 0;
+  min-height: 0;
+  background: none;
+  border: 0;
+  border-radius: 0;
 }
 
 .split {
@@ -697,6 +764,7 @@ h1, h2, h3 {
 
 @media (min-width: 800px) {
   .service-list { grid-template-columns: 1fr 1fr; }
+  .review-list { grid-template-columns: repeat(3, 1fr); }
   .feature-grid { grid-template-columns: 1fr 1fr; }
   .band-inner { grid-template-columns: 1.3fr 0.7fr; }
   .story { grid-template-columns: minmax(200px, 320px) minmax(0, 1fr); }

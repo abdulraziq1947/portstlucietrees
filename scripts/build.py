@@ -1,10 +1,28 @@
 #!/usr/bin/env python3
 """Build the static Port St Lucie Tree Service site from the audited HTML."""
 
+import html
 import json
 import re
-from html import escape, unescape
 from pathlib import Path
+
+from content import (
+    GOOGLE_PROFILE,
+    HOME_CARDS,
+    HOME_FAQS,
+    HOME_INTRO,
+    LOCATION_PAGES,
+    META,
+    PERMIT_URL,
+    REVIEWS,
+    SERVICE_PAGES,
+)
+
+def escape(value, quote=False):
+    return html.escape("" if value is None else str(value), quote=quote)
+
+
+unescape = html.unescape
 
 ROOT = Path(__file__).resolve().parents[1]
 AUDIT = ROOT / ".audit" / "html"
@@ -18,11 +36,14 @@ SITE_NAME = "Tree Service Port St Lucie"
 
 SERVICES = [
     ("tree-removal.html", "Tree Removal"),
+    ("emergency-tree-removal.html", "Emergency Tree Removal"),
+    ("palm-tree-trimming.html", "Palm Tree Trimming & Removal"),
+    ("tree-care-prevention.html", "Tree Trimming & Pruning"),
     ("stump-removal.html", "Stump Removal"),
-    ("commercial-tree-service.html", "Commercial Tree Service"),
-    ("tree-care-prevention.html", "Tree Care Prevention"),
-    ("brush-cleaning.html", "Brush Cleaning"),
     ("storm-damage-clean-up.html", "Storm Damage Clean Up"),
+    ("land-lot-clearing.html", "Land & Lot Clearing"),
+    ("brush-cleaning.html", "Brush Cleaning"),
+    ("commercial-tree-service.html", "Commercial Tree Service"),
 ]
 SERVICE_URL = {name: href for href, name in SERVICES}
 
@@ -55,11 +76,15 @@ PAGES = [
     "about.html",
     "services.html",
     "contact.html",
+    "our-work.html",
     "tree-removal.html",
+    "emergency-tree-removal.html",
+    "palm-tree-trimming.html",
     "stump-removal.html",
     "commercial-tree-service.html",
     "tree-care-prevention.html",
     "brush-cleaning.html",
+    "land-lot-clearing.html",
     "storm-damage-clean-up.html",
     "locations-port-st-lucie.html",
     "neighborhoods.html",
@@ -93,12 +118,7 @@ JUNK = {
 
 # Photos downloaded from the live site. Alt text matches the live page
 # except the quote graphic, whose live alt was the generic word "Picture".
-LOGO = (
-    "/images/live/editor/tree-removal-pros-port-st-lucie-home.jpg",
-    "tree care service logo",
-    298,
-    340,
-)
+LOGO = ("/images/mark.svg", "", 64, 64)
 HERO_PHOTO = "/images/live/background-images/209300239.jpg"
 TREES_PHOTO = "/images/live/background-images/1436807259.jpg"
 HOME_PHOTOS = {
@@ -464,39 +484,32 @@ def footer():
     services = "\n".join(
         f'<li><a href="/{href}">{escape(label)}</a></li>' for href, label in SERVICES
     )
-    places = "\n".join(
-        f'<li><a href="/{href}">{escape(label)}</a></li>' if href else f"<li>{escape(label)}</li>"
-        for href, label in PLACES
-    )
-    neighborhoods = "\n".join(
-        f'<li><a href="/{href}">{escape(label)}</a></li>' for href, label in NEIGHBORHOODS
-    )
     return f"""
   <footer class="site-footer">
     <div class="wrap footer-grid">
       <div>
-        <h2>{escape(BUSINESS)}</h2>
-        <p>Tree removal, stump removal, brush cleaning, and storm cleanup in Port St. Lucie, Florida.</p>
+        <h2>Company</h2>
+        <p>Tree removal and trimming for homeowners in Port St. Lucie and nearby towns.</p>
         <p><a href="{TEL}">{PHONE}</a></p>
+        <ul>
+          <li><a href="/about.html">About</a></li>
+          <li><a href="/our-work.html">Our Work</a></li>
+          <li><a href="/contact.html">Contact</a></li>
+        </ul>
       </div>
       <div>
         <h2>Services</h2>
         <ul>{services}</ul>
       </div>
       <div>
-        <h2>Company</h2>
+        <h2>Quick Links</h2>
         <ul>
           <li><a href="/">Home</a></li>
-          <li><a href="/about.html">About</a></li>
-          <li><a href="/services.html">Services</a></li>
-          <li><a href="/contact.html">Contact</a></li>
-          <li><a href="/locations-port-st-lucie.html">Locations</a></li>
+          <li><a href="/services.html">All services</a></li>
+          <li><a href="/locations-port-st-lucie.html">Service Areas</a></li>
           <li><a href="/neighborhoods.html">Neighborhoods</a></li>
+          <li><a href="/contact.html#quote">Request an estimate</a></li>
         </ul>
-      </div>
-      <div>
-        <h2>Service area</h2>
-        <ul>{places}{neighborhoods}</ul>
       </div>
     </div>
     <div class="wrap legal">
@@ -530,15 +543,13 @@ def json_ld():
     return json.dumps(data, ensure_ascii=False)
 
 
-def shell(filename, extracted, main, crumbs_html="", with_tally=False):
-    seo = SEO[filename]
-    title = seo["title"]
-    description = description_for(filename, extracted)
-    keywords = seo.get("keywords")
+def shell(filename, main, with_tally=False):
+    meta = META[filename]
+    title = meta["title"]
+    description = meta["description"]
     canonical = canon(filename)
-    keyword_tag = f'\n<meta name="keywords" content="{escape(keywords, quote=True)}">' if keywords else ""
-    desc_tag = f'\n<meta name="description" content="{escape(description, quote=True)}">' if description else ""
-    og_desc = f'\n<meta property="og:description" content="{escape(description, quote=True)}">' if description else ""
+    desc_tag = f'\n<meta name="description" content="{escape(description, quote=True)}">'
+    og_desc = f'\n<meta property="og:description" content="{escape(description, quote=True)}">'
     if filename in PAGE_PHOTOS:
         share = PAGE_PHOTOS[filename][0]
     elif filename == "index.html":
@@ -553,14 +564,14 @@ def shell(filename, extracted, main, crumbs_html="", with_tally=False):
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>{escape(title)}</title>{desc_tag}{keyword_tag}
+<title>{escape(title)}</title>{desc_tag}
 <link rel="canonical" href="{canonical}">
 <meta property="og:site_name" content="{escape(SITE_NAME, quote=True)}">
 <meta property="og:title" content="{escape(title, quote=True)}">{og_desc}
 <meta property="og:url" content="{canonical}">
 <meta property="og:type" content="website">{og_image}
 <meta name="theme-color" content="#1b3024">
-<link rel="icon" href="{LOGO[0]}" type="image/jpeg">
+<link rel="icon" href="/images/mark.svg" type="image/svg+xml">
 <link rel="stylesheet" href="/css/site.css">
 <script type="application/ld+json">{json_ld()}</script>
 </head>
@@ -797,7 +808,11 @@ def render_home(extracted):
 
 
 def crumb_for(filename, h1):
-    if filename in {href for href, _ in SERVICES} or filename == "services.html":
+    if filename == "services.html":
+        return crumbs([("/", "Home"), (None, "Services")])
+    if filename == "our-work.html":
+        return crumbs([("/", "Home"), (None, "Our Work")])
+    if filename in {href for href, _ in SERVICES}:
         return crumbs([("/", "Home"), ("/services.html", "Services"), (None, h1)])
     if filename in {href for href, _ in NEIGHBORHOODS}:
         return crumbs([("/", "Home"), ("/neighborhoods.html", "Neighborhoods"), (None, h1)])
@@ -888,6 +903,306 @@ def write_robots():
     )
 
 
+def service_card_html(cards):
+    parts = []
+    for href, label, blurb, photo_key in cards:
+        src, alt, width, height = PAGE_PHOTOS[photo_key]
+        parts.append(
+            f"""<article class="service-card">
+              {picture(src, alt, width, height)}
+              <div>
+                <h2><a href="/{href}">{escape(label)}</a></h2>
+                <p>{escape(blurb)}</p>
+                <p class="card-link"><a class="details" href="/{href}">Details</a></p>
+              </div>
+            </article>"""
+        )
+    return "".join(parts)
+
+
+def faq_html(items):
+    blocks = []
+    for question, answer in items:
+        extra = ""
+        if question.startswith("Do I need a permit"):
+            extra = f' <a href="{PERMIT_URL}">City of Port St. Lucie tree rules</a>.'
+        blocks.append(
+            f"<details><summary>{escape(question)}</summary><p>{escape(answer)}{extra}</p></details>"
+        )
+    return f'<div class="faq">{"".join(blocks)}</div>'
+
+
+def render_home_page():
+    reviews = "".join(
+        f"""<blockquote class="review">
+              <p>{escape(text)}</p>
+              <footer>{escape(name)} · Google review</footer>
+            </blockquote>"""
+        for name, text in REVIEWS
+    )
+    main = f"""
+<main id="main">
+  <section class="hero">
+    <div class="wrap hero-grid">
+      <div>
+        <p class="eyebrow">Port St. Lucie, Florida</p>
+        <h1>Tree Removal in Port St. Lucie</h1>
+        <p class="lede">{escape(HOME_INTRO)}</p>
+        <div class="hero-actions">
+          <a class="btn btn-solid" href="#quote">Request an estimate</a>
+          <a class="btn btn-ghost" href="{TEL}">CALL NOW</a>
+        </div>
+        <p class="hero-more"><a href="/services.html">LEARN MORE</a></p>
+      </div>
+      {tally()}
+    </div>
+  </section>
+  <section class="section">
+    <div class="wrap">
+      <div class="section-head">
+        <p class="kicker">Our services</p>
+        <h2>Our Services</h2>
+      </div>
+      <div class="service-list">
+        {service_card_html(HOME_CARDS)}
+      </div>
+    </div>
+  </section>
+  <section class="section" style="padding-top:0">
+    <div class="wrap">
+      <div class="section-head">
+        <p class="kicker">Google reviews</p>
+        <h2>What homeowners wrote</h2>
+        <p>The Google listing shows 5.0 from 17 reviews. These three are from that listing.</p>
+      </div>
+      <div class="review-list">
+        {reviews}
+      </div>
+      <p><a class="details" href="{GOOGLE_PROFILE}">Read the Google reviews</a></p>
+    </div>
+  </section>
+  <section class="section" style="padding-top:0">
+    <div class="wrap work-note">
+      <div>
+        <p class="kicker">Our work</p>
+        <h2>Recent jobs</h2>
+        <p>Photos of finished jobs will go on the work page. Call if you want to ask what a similar tree looked like after the crew left.</p>
+        <p><a class="details" href="/our-work.html">Our Work</a></p>
+      </div>
+    </div>
+  </section>
+  <section class="section" style="padding-top:0">
+    <div class="wrap">
+      <div class="section-head">
+        <p class="kicker">Questions</p>
+        <h2>Questions before you call</h2>
+      </div>
+      {faq_html(HOME_FAQS)}
+    </div>
+  </section>
+  {map_section()}
+  {cta_band("Tell us the address and what the tree is doing.", "Call about the tree")}
+</main>"""
+    return shell("index.html", main, with_tally=True)
+
+
+def render_service(filename):
+    data = SERVICE_PAGES[filename]
+    h1 = data["h1"]
+    when = "".join(f"<li>{escape(item)}</li>" for item in data["when"])
+    process = "".join(f"<li>{escape(item)}</li>" for item in data["process"])
+    costs = "".join(f"<li>{escape(item)}</li>" for item in data["costs"])
+    main = f"""
+<main id="main">
+  <div class="page-hero photo-work"><div class="wrap">{crumb_for(filename, h1)}<h1>{escape(h1)}</h1></div></div>
+  <section class="section">
+    <div class="wrap story">
+      {page_figure(filename if filename in PAGE_PHOTOS else "tree-removal.html")}
+      <div class="prose">
+        <p>{escape(data["intro"])}</p>
+        <p><a class="btn btn-dark" href="{TEL}">Call {PHONE}</a></p>
+      </div>
+    </div>
+  </section>
+  <section class="section" style="padding-top:0">
+    <div class="wrap prose service-copy">
+      <h2>When to call</h2>
+      <ul class="plain-list">{when}</ul>
+      <h2>How the work goes</h2>
+      <ol class="plain-list">{process}</ol>
+      <h2>What changes the price</h2>
+      <ul class="plain-list">{costs}</ul>
+      <h2>Questions about this job</h2>
+      {faq_html(data["faqs"])}
+    </div>
+  </section>
+  {map_section()}
+  {cta_band("Tell us the address and what the tree is doing.", "Get an estimate")}
+</main>"""
+    return shell(filename, main)
+
+
+def render_location(filename):
+    data = LOCATION_PAGES[filename]
+    h1 = data["h1"]
+    paragraphs = data["paragraphs"]
+    lead = f"<p>{escape(paragraphs[0])}</p>"
+    rest = "".join(f"<p>{escape(paragraph)}</p>" for paragraph in paragraphs[1:])
+    permit = ""
+    if filename in {"port-st-lucie-flordia.html", "portstluciecarlton.html"}:
+        permit = f'<p><a href="{PERMIT_URL}">Port St. Lucie protected-tree rules</a></p>'
+    place_pages = {href for href, _ in PLACES if href} | {href for href, _ in NEIGHBORHOODS}
+    hero = "page-hero photo-trees" if filename in place_pages else "page-hero photo-work"
+    main = f"""
+<main id="main">
+  <div class="{hero}"><div class="wrap">{crumb_for(filename, h1)}<h1>{escape(h1)}</h1></div></div>
+  <section class="section">
+    <div class="wrap story">
+      {page_figure(filename)}
+      <div class="prose">
+        {lead}
+        <p><a class="btn btn-dark" href="{TEL}">Call {PHONE}</a></p>
+      </div>
+    </div>
+  </section>
+  <section class="section" style="padding-top:0">
+    <div class="wrap prose">
+      {rest}
+      {permit}
+      <h2>Services for this property</h2>
+      <ul>
+        <li><a href="/tree-removal.html">Tree Removal</a></li>
+        <li><a href="/tree-care-prevention.html">Tree Trimming &amp; Pruning</a></li>
+        <li><a href="/palm-tree-trimming.html">Palm Tree Trimming &amp; Removal</a></li>
+        <li><a href="/storm-damage-clean-up.html">Storm Damage Clean Up</a></li>
+        <li><a href="/stump-removal.html">Stump Removal</a></li>
+      </ul>
+    </div>
+  </section>
+  {map_section()}
+  {cta_band("Send the address and a photo of the tree.", "Call about this property")}
+</main>"""
+    return shell(filename, main)
+
+
+def render_about_page():
+    h1 = "About"
+    main = f"""
+<main id="main">
+  <div class="page-hero photo-work"><div class="wrap">{crumb_for("about.html", h1)}<h1>{h1}</h1></div></div>
+  <section class="section">
+    <div class="wrap story">
+      {page_figure("about.html")}
+      <div class="prose">
+        <p>Port St Lucie Tree Service removes, trims, and cleans up trees for homeowners. The work is the tree in your yard: how close it is to the house, whether it is dead, and what has to be hauled away.</p>
+        <p>We do not publish awards, license numbers, or a street address on this site. Call {PHONE} and ask for the proof your property manager needs before the crew starts.</p>
+        <p><a href="/services.html">Services</a> · <a href="/contact.html">Contact</a></p>
+      </div>
+    </div>
+  </section>
+  {map_section()}
+  {cta_band()}
+</main>"""
+    return shell("about.html", main)
+
+
+def render_services_index():
+    h1 = "Services"
+    main = f"""
+<main id="main">
+  <div class="page-hero photo-work"><div class="wrap">{crumb_for("services.html", h1)}<h1>{h1}</h1></div></div>
+  <section class="section">
+    <div class="wrap">
+      <div class="prose">
+        <p>Start with the problem. A tree on the house is not the same job as a stump in the lawn or brush along the fence.</p>
+      </div>
+      <div class="service-list">
+        {service_card_html(HOME_CARDS)}
+      </div>
+    </div>
+  </section>
+  {map_section()}
+  {cta_band()}
+</main>"""
+    return shell("services.html", main)
+
+
+def render_contact_page():
+    h1 = "Contact"
+    main = f"""
+<main id="main">
+  <div class="page-hero photo-work"><div class="wrap">{crumb_for("contact.html", h1)}<h1>{h1}</h1></div></div>
+  <section class="section">
+    <div class="wrap contact-grid">
+      <div class="prose">
+        {page_figure("contact.html")}
+        <p>Call {PHONE} or send the form. Say what the tree is doing, how close it is to the house, and whether a truck can reach the yard. A photo helps.</p>
+        <p><a class="btn btn-dark" href="{TEL}">Call {PHONE}</a></p>
+      </div>
+      {tally()}
+    </div>
+  </section>
+  {map_section()}
+</main>"""
+    return shell("contact.html", main, with_tally=True)
+
+
+def render_our_work():
+    h1 = "Our Work"
+    main = f"""
+<main id="main">
+  <div class="page-hero photo-work"><div class="wrap">{crumb_for("our-work.html", h1)}<h1>{h1}</h1></div></div>
+  <section class="section">
+    <div class="wrap prose">
+      <p>Photos of finished jobs will be added here. Until those are up, call {PHONE} and ask what a similar removal or trim looked like when the crew left.</p>
+      <p><a class="btn btn-dark" href="{TEL}">Call {PHONE}</a></p>
+    </div>
+  </section>
+  {map_section()}
+  {cta_band()}
+</main>"""
+    return shell("our-work.html", main)
+
+
+def render_locations_index():
+    h1 = "Service Areas"
+    links = render_ul([name for _, name in PLACES])
+    main = f"""
+<main id="main">
+  <div class="page-hero photo-trees"><div class="wrap">{crumb_for("locations-port-st-lucie.html", h1)}<h1>{h1}</h1></div></div>
+  <section class="section">
+    <div class="wrap prose">
+      <p>We take calls for homes in these towns. If your city is not linked, it does not have its own page yet. Call and ask before you assume the drive is too far.</p>
+      {links}
+      <p><a href="/neighborhoods.html">Neighborhoods</a></p>
+    </div>
+  </section>
+  {map_section()}
+  {cta_band()}
+</main>"""
+    return shell("locations-port-st-lucie.html", main)
+
+
+def render_neighborhoods_page():
+    links = "".join(
+        f'<li><a href="/{href}">{escape(label)}</a></li>' for href, label in NEIGHBORHOODS
+    )
+    h1 = "Neighborhoods"
+    main = f"""
+<main id="main">
+  <div class="page-hero photo-trees"><div class="wrap">{crumb_for("neighborhoods.html", h1)}<h1>{h1}</h1></div></div>
+  <section class="section">
+    <div class="wrap prose">
+      <p>Neighborhood pages on this site:</p>
+      <ul class="place-list">{links}</ul>
+    </div>
+  </section>
+  {map_section()}
+  {cta_band()}
+</main>"""
+    return shell("neighborhoods.html", main)
+
+
 def validate():
     missing = [name for name in PAGES if not (ROOT / name).exists()]
     if missing:
@@ -895,12 +1210,23 @@ def validate():
     problems = []
     for name in PAGES:
         text = (ROOT / name).read_text(encoding="utf-8")
-        if SEO[name]["title"] not in text:
+        title = META[name]["title"]
+        if f"<title>{escape(title)}</title>" not in text:
             problems.append(f"{name} title mismatch")
+        if f'name="description" content="{escape(META[name]["description"], quote=True)}"' not in text:
+            problems.append(f"{name} description mismatch")
         if f'rel="canonical" href="{canon(name)}"' not in text:
             problems.append(f"{name} canonical mismatch")
-        if "concretecolumbusga.com" in text:
-            problems.append(f"{name} stray outbound link")
+        if "<h1" not in text:
+            problems.append(f"{name} missing h1")
+        if text.count("<h1") != 1:
+            problems.append(f"{name} h1 count {text.count('<h1')}")
+        if "google.com/maps/embed" not in text:
+            problems.append(f"{name} missing map")
+        if "noindex" in text.lower():
+            problems.append(f"{name} noindex")
+        if "concretecolumbusga.com" in text or "Augusta" in text:
+            problems.append(f"{name} stray claim")
         if "weebly.com" in text:
             problems.append(f"{name} weebly reference")
         for href in re.findall(r'href="(/[^"]*)"', text):
@@ -914,36 +1240,33 @@ def validate():
     contact = (ROOT / "contact.html").read_text(encoding="utf-8")
     if "source=Port+St+Lucie+Tree+Service" not in index or "source=Port+St+Lucie+Tree+Service" not in contact:
         problems.append("Tally source missing")
-    checks = {
-        "index.html": ["/services.html"],
-        "services.html": ["/tree-removal.html"],
-        "tree-removal.html": ["/stump-removal.html"],
-        "stump-removal.html": ["/commercial-tree-service.html"],
-        "commercial-tree-service.html": ["/tree-care-prevention.html"],
-        "tree-care-prevention.html": ["/brush-cleaning.html"],
-        "brush-cleaning.html": ["/storm-damage-clean-up.html"],
-        "storm-damage-clean-up.html": ["/about.html"],
-        "about.html": ["/contact.html"],
-        "contact.html": ["/"],
-    }
-    for name, hrefs in checks.items():
-        text = (ROOT / name).read_text(encoding="utf-8")
-        for href in hrefs:
-            if f'href="{href}"' not in text:
-                problems.append(f"{name} missing link {href}")
+    if "number one" in index.lower() or "best tree company" in index.lower():
+        problems.append("homepage still has an unverified claim")
     if problems:
         raise SystemExit("\n".join(problems))
     print(f"Built {len(PAGES)} pages")
 
 
 def main():
-    extracted = {name: extract(name) for name in PAGES}
-    (ROOT / "index.html").write_text(render_home(extracted["index.html"]), encoding="utf-8")
-    (ROOT / "neighborhoods.html").write_text(render_neighborhoods(extracted["neighborhoods.html"]), encoding="utf-8")
-    for name in PAGES:
-        if name in ("index.html", "neighborhoods.html"):
-            continue
-        (ROOT / name).write_text(render_page(name, extracted[name]), encoding="utf-8")
+    pages = {
+        "index.html": render_home_page(),
+        "about.html": render_about_page(),
+        "services.html": render_services_index(),
+        "contact.html": render_contact_page(),
+        "our-work.html": render_our_work(),
+        "locations-port-st-lucie.html": render_locations_index(),
+        "neighborhoods.html": render_neighborhoods_page(),
+    }
+    for name in SERVICE_PAGES:
+        pages[name] = render_service(name)
+    for name in LOCATION_PAGES:
+        pages[name] = render_location(name)
+    missing = [name for name in PAGES if name not in pages]
+    extra = [name for name in pages if name not in PAGES]
+    if missing or extra:
+        raise SystemExit(f"Page list mismatch missing={missing} extra={extra}")
+    for name, html in pages.items():
+        (ROOT / name).write_text(html, encoding="utf-8")
     write_sitemap()
     write_robots()
     validate()
