@@ -44,6 +44,13 @@ SERVICES = [
     ("land-lot-clearing.html", "Land & Lot Clearing"),
     ("brush-cleaning.html", "Brush Cleaning"),
     ("commercial-tree-service.html", "Commercial Tree Service"),
+    ("large-tree-removal.html", "Large Tree Removal"),
+    ("crane-assisted-tree-removal.html", "Crane-Assisted Tree Removal"),
+    ("hazardous-dangerous-tree-removal.html", "Hazardous & Dangerous Tree Removal"),
+    ("oak-tree-removal.html", "Oak Tree Removal"),
+    ("dead-diseased-tree-removal.html", "Dead & Diseased Tree Removal"),
+    ("tree-removal-near-houses-buildings.html", "Tree Removal Near Houses & Buildings"),
+    ("tree-removal-for-construction.html", "Tree Removal for Construction"),
 ]
 SERVICE_URL = {name: href for href, name in SERVICES}
 
@@ -86,6 +93,13 @@ PAGES = [
     "brush-cleaning.html",
     "land-lot-clearing.html",
     "storm-damage-clean-up.html",
+    "large-tree-removal.html",
+    "crane-assisted-tree-removal.html",
+    "hazardous-dangerous-tree-removal.html",
+    "oak-tree-removal.html",
+    "dead-diseased-tree-removal.html",
+    "tree-removal-near-houses-buildings.html",
+    "tree-removal-for-construction.html",
     "locations-port-st-lucie.html",
     "neighborhoods.html",
     "royal-palm-beach-florida.html",
@@ -118,7 +132,7 @@ JUNK = {
 
 # Photos downloaded from the live site. Alt text matches the live page
 # except the quote graphic, whose live alt was the generic word "Picture".
-LOGO = ("/images/mark.svg", "", 64, 64)
+LOGO = ("/images/mark.svg", "Port St Lucie Tree Service logo", 64, 64)
 HERO_PHOTO = "/images/live/background-images/209300239.jpg"
 TREES_PHOTO = "/images/live/background-images/1436807259.jpg"
 HOME_PHOTOS = {
@@ -196,17 +210,77 @@ PAGE_PHOTOS = {
         1057,
         800,
     ),
-    "tree-care-prevention.html": (
-        "/images/live/tree-removal-pros-port-st-lucie-tree-care-prevention-2_orig.jpg",
-        "tree care expert working on planting tree",
-        1100,
-        733,
-    ),
     "brush-cleaning.html": (
-        "/images/live/tree-removal-pros-port-st-lucie-brush-cleaning-2_orig.jpg",
-        "tree care expert working on brush cleaning",
-        1011,
+        "/images/stock/brush-cleaning.jpg",
+        "Brush and undergrowth cleared from a yard",
+        1200,
         800,
+    ),
+    "palm-tree-trimming.html": (
+        "/images/stock/palm-tree-trimming.jpg",
+        "Palm tree trimming work",
+        1200,
+        901,
+    ),
+    "tree-care-prevention.html": (
+        "/images/stock/tree-trimming.jpg",
+        "Tree trimming and pruning in progress",
+        1200,
+        800,
+    ),
+    "land-lot-clearing.html": (
+        "/images/stock/land-lot-clearing.jpg",
+        "Land and lot clearing in progress",
+        1200,
+        675,
+    ),
+    "emergency-tree-removal.html": (
+        "/images/live/tree-removal-pros-port-st-lucie-storm-damage-clean-up-2_orig.jpg",
+        "Emergency tree removal after storm damage",
+        1100,
+        736,
+    ),
+    "large-tree-removal.html": (
+        "/images/stock/large-tree-removal.jpg",
+        "Large tree removal",
+        1200,
+        1797,
+    ),
+    "crane-assisted-tree-removal.html": (
+        "/images/stock/crane-tree-removal.jpg",
+        "Crane-assisted tree removal",
+        1200,
+        687,
+    ),
+    "hazardous-dangerous-tree-removal.html": (
+        "/images/stock/hazardous-tree.jpg",
+        "Hazardous tree near a property",
+        1200,
+        828,
+    ),
+    "oak-tree-removal.html": (
+        "/images/stock/oak-tree.jpg",
+        "Oak tree on a residential lot",
+        1200,
+        799,
+    ),
+    "dead-diseased-tree-removal.html": (
+        "/images/stock/dead-diseased-tree.jpg",
+        "Dead or diseased tree",
+        1200,
+        800,
+    ),
+    "tree-removal-near-houses-buildings.html": (
+        "/images/stock/tree-near-house.jpg",
+        "Tree close to a house",
+        1200,
+        800,
+    ),
+    "tree-removal-for-construction.html": (
+        "/images/stock/construction-clearing.jpg",
+        "Trees cleared for construction",
+        1200,
+        675,
     ),
     "storm-damage-clean-up.html": (
         "/images/live/tree-removal-pros-port-st-lucie-storm-damage-clean-up-2_orig.jpg",
@@ -475,9 +549,18 @@ def nav(filename):
       </ul>
     </nav>
     <div class="header-actions">
-      <a class="btn btn-ghost" href="{TEL}">Call {PHONE}</a>
+      <a class="btn btn-ghost btn-call" href="{TEL}">{PHONE_ICON}<strong>Call {PHONE}</strong></a>
       <a class="btn btn-solid" href="{estimate}">Request an estimate</a>
     </div>"""
+
+
+OFFICE_HOURS = "Monday–Sunday: 7:00 AM – 7:00 PM"
+PHONE_ICON = '<svg class="phone-icon" width="18" height="18" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path fill="currentColor" d="M6.6 10.8c1.4 2.8 3.8 5.1 6.6 6.6l2.2-2.2c.3-.3.7-.4 1.1-.3 1.2.4 2.5.6 3.8.6.6 0 1 .4 1 1V20c0 .6-.4 1-1 1C10.6 21 3 13.4 3 4c0-.6.4-1 1-1h3.5c.6 0 1 .4 1 1 0 1.3.2 2.6.6 3.8.1.4 0 .8-.3 1.1L6.6 10.8z"/></svg>'
+
+
+def phone_link(extra_class=""):
+    cls = "phone-link" + (f" {extra_class}" if extra_class else "")
+    return f'<a class="{cls}" href="{TEL}">{PHONE_ICON}<strong>{PHONE}</strong></a>'
 
 
 def footer():
@@ -490,7 +573,7 @@ def footer():
       <div>
         <h2>Company</h2>
         <p>Tree removal and trimming for homeowners in Port St. Lucie and nearby towns.</p>
-        <p><a href="{TEL}">{PHONE}</a></p>
+        <p>{phone_link()}</p>
         <ul>
           <li><a href="/about.html">About</a></li>
           <li><a href="/our-work.html">Our Work</a></li>
@@ -511,13 +594,18 @@ def footer():
           <li><a href="/contact.html#quote">Request an estimate</a></li>
         </ul>
       </div>
+      <div>
+        <h2>Office Hours</h2>
+        <p>{OFFICE_HOURS}</p>
+        <p>{phone_link()}</p>
+      </div>
     </div>
     <div class="wrap legal">
-      <p>{escape(BUSINESS)}. Port St. Lucie, Florida. <a href="{TEL}">{PHONE}</a></p>
+      <p>{escape(BUSINESS)}. Port St. Lucie, Florida. {phone_link()}</p>
     </div>
   </footer>
   <div class="mobile-bar">
-    <a class="btn btn-ghost" href="{TEL}">Call {PHONE}</a>
+    <a class="btn btn-ghost" href="{TEL}">{PHONE_ICON} Call</a>
     <a class="btn btn-solid" href="/contact.html#quote">Request estimate</a>
   </div>"""
 
@@ -579,8 +667,8 @@ def shell(filename, main, with_tally=False):
 <a class="skip" href="#main">Skip to content</a>
 <div class="utility">
   <div class="wrap utility-inner">
-    <span>Port St. Lucie, Florida</span>
-    <a href="{TEL}">{PHONE}</a>
+    <span>Port St. Lucie, Florida · {OFFICE_HOURS}</span>
+    {phone_link()}
   </div>
 </div>
 <header class="site-header">
@@ -932,11 +1020,32 @@ def faq_html(items):
     return f'<div class="faq">{"".join(blocks)}</div>'
 
 
+def locations_home_section():
+    links = "".join(
+        f'<li><a href="/{href}">{escape(label)}</a></li>' if href else f"<li>{escape(label)}</li>"
+        for href, label in PLACES
+    )
+    return f"""
+  <section class="section locations-band" style="padding-top:0">
+    <div class="wrap">
+      <div class="section-head">
+        <p class="kicker">Service area</p>
+        <h2>Locations we serve</h2>
+        <p>Tree removal and trimming across Port St. Lucie and nearby Treasure Coast towns.</p>
+      </div>
+      <ul class="place-list location-chips">{links}</ul>
+      <p><a class="details" href="/locations-port-st-lucie.html">All service areas</a> · <a class="details" href="/neighborhoods.html">Neighborhoods</a></p>
+    </div>
+  </section>"""
+
+
 def render_home_page():
     reviews = "".join(
         f"""<blockquote class="review">
+              <h3>{escape(name)}</h3>
+              <p class="stars" aria-label="5 out of 5 stars">★★★★★</p>
               <p>{escape(text)}</p>
-              <footer>{escape(name)} · Google review</footer>
+              <footer>Google review</footer>
             </blockquote>"""
         for name, text in REVIEWS
     )
@@ -950,7 +1059,7 @@ def render_home_page():
         <p class="lede">{escape(HOME_INTRO)}</p>
         <div class="hero-actions">
           <a class="btn btn-solid" href="#quote">Request an estimate</a>
-          <a class="btn btn-ghost" href="{TEL}">CALL NOW</a>
+          <a class="btn btn-ghost btn-call" href="{TEL}">{PHONE_ICON}<strong>CALL NOW</strong></a>
         </div>
         <p class="hero-more"><a href="/services.html">LEARN MORE</a></p>
       </div>
@@ -973,6 +1082,7 @@ def render_home_page():
       <div class="section-head">
         <p class="kicker">Google reviews</p>
         <h2>What homeowners wrote</h2>
+        <p class="stars section-stars" aria-label="5 out of 5 stars">★★★★★</p>
         <p>The Google listing shows 5.0 from 17 reviews. These three are from that listing.</p>
       </div>
       <div class="review-list">
@@ -1000,8 +1110,8 @@ def render_home_page():
       {faq_html(HOME_FAQS)}
     </div>
   </section>
+  {locations_home_section()}
   {map_section()}
-  {cta_band("Tell us the address and what the tree is doing.", "Call about the tree")}
 </main>"""
     return shell("index.html", main, with_tally=True)
 
@@ -1009,18 +1119,42 @@ def render_home_page():
 def render_service(filename):
     data = SERVICE_PAGES[filename]
     h1 = data["h1"]
+    eyebrow = data.get("eyebrow") or data.get("h1", "Tree service")
+    lede = data.get("lede") or data.get("intro", "")
+    story_h2 = data.get("story_h2") or "About this service"
+    story = data.get("story") or data.get("intro", "")
     when = "".join(f"<li>{escape(item)}</li>" for item in data["when"])
     process = "".join(f"<li>{escape(item)}</li>" for item in data["process"])
     costs = "".join(f"<li>{escape(item)}</li>" for item in data["costs"])
+    seo = data.get("seo_sections") or []
+    seo_html = "".join(
+        f"<h2>{escape(title)}</h2><p>{escape(body)}</p>" for title, body in seo
+    )
+    photo_key = filename if filename in PAGE_PHOTOS else "tree-removal.html"
     main = f"""
 <main id="main">
-  <div class="page-hero photo-work"><div class="wrap">{crumb_for(filename, h1)}<h1>{escape(h1)}</h1></div></div>
+  <section class="hero slim-hero service-hero">
+    <div class="wrap hero-grid">
+      <div>
+        {crumb_for(filename, h1)}
+        <p class="eyebrow">{escape(eyebrow)}</p>
+        <h1>{escape(h1)}</h1>
+        <p class="lede">{escape(lede)}</p>
+        <div class="hero-actions">
+          <a class="btn btn-solid" href="#quote">Request an estimate</a>
+          <a class="btn btn-ghost btn-call" href="{TEL}">{PHONE_ICON}<strong>Call {PHONE}</strong></a>
+        </div>
+      </div>
+      {tally()}
+    </div>
+  </section>
   <section class="section">
-    <div class="wrap story">
-      {page_figure(filename if filename in PAGE_PHOTOS else "tree-removal.html")}
+    <div class="wrap story story-balanced">
+      {page_figure(photo_key)}
       <div class="prose">
-        <p>{escape(data["intro"])}</p>
-        <p><a class="btn btn-dark" href="{TEL}">Call {PHONE}</a></p>
+        <h2>{escape(story_h2)}</h2>
+        <p>{escape(story)}</p>
+        <p>{phone_link("phone-link-lg")}</p>
       </div>
     </div>
   </section>
@@ -1032,57 +1166,64 @@ def render_service(filename):
       <ol class="plain-list">{process}</ol>
       <h2>What changes the price</h2>
       <ul class="plain-list">{costs}</ul>
+      {seo_html}
       <h2>Questions about this job</h2>
       {faq_html(data["faqs"])}
+      <p><a class="btn btn-dark btn-call" href="{TEL}">{PHONE_ICON}<strong>Call {PHONE}</strong></a> <a class="btn btn-solid" href="/contact.html#quote">Request an estimate</a></p>
     </div>
   </section>
   {map_section()}
-  {cta_band("Tell us the address and what the tree is doing.", "Get an estimate")}
 </main>"""
-    return shell(filename, main)
+    return shell(filename, main, with_tally=True)
 
 
 def render_location(filename):
     data = LOCATION_PAGES[filename]
     h1 = data["h1"]
     paragraphs = data["paragraphs"]
-    lead = f"<p>{escape(paragraphs[0])}</p>"
+    lead = escape(paragraphs[0])
     rest = "".join(f"<p>{escape(paragraph)}</p>" for paragraph in paragraphs[1:])
     permit = ""
     if filename in {"port-st-lucie-flordia.html", "portstluciecarlton.html"}:
         permit = f'<p><a href="{PERMIT_URL}">Port St. Lucie protected-tree rules</a></p>'
-    place_pages = {href for href, _ in PLACES if href} | {href for href, _ in NEIGHBORHOODS}
-    hero = "page-hero photo-trees" if filename in place_pages else "page-hero photo-work"
     main = f"""
 <main id="main">
-  <div class="{hero}"><div class="wrap">{crumb_for(filename, h1)}<h1>{escape(h1)}</h1></div></div>
-  <section class="section">
-    <div class="wrap story">
-      {page_figure(filename)}
-      <div class="prose">
-        {lead}
-        <p><a class="btn btn-dark" href="{TEL}">Call {PHONE}</a></p>
+  <section class="hero slim-hero location-hero">
+    <div class="wrap hero-grid">
+      <div>
+        {crumb_for(filename, h1)}
+        <p class="eyebrow">Service area</p>
+        <h1>{escape(h1)}</h1>
+        <p class="lede">{lead}</p>
+        <div class="hero-actions">
+          <a class="btn btn-solid" href="#quote">Request an estimate</a>
+          <a class="btn btn-ghost btn-call" href="{TEL}">{PHONE_ICON}<strong>Call {PHONE}</strong></a>
+        </div>
       </div>
+      {tally()}
     </div>
   </section>
-  <section class="section" style="padding-top:0">
-    <div class="wrap prose">
-      {rest}
-      {permit}
-      <h2>Services for this property</h2>
-      <ul>
-        <li><a href="/tree-removal.html">Tree Removal</a></li>
-        <li><a href="/tree-care-prevention.html">Tree Trimming &amp; Pruning</a></li>
-        <li><a href="/palm-tree-trimming.html">Palm Tree Trimming &amp; Removal</a></li>
-        <li><a href="/storm-damage-clean-up.html">Storm Damage Clean Up</a></li>
-        <li><a href="/stump-removal.html">Stump Removal</a></li>
-      </ul>
+  <section class="section">
+    <div class="wrap location-split">
+      <div class="prose">
+        {rest}
+        {permit}
+        <h2>Services for this property</h2>
+        <ul>
+          <li><a href="/tree-removal.html">Tree Removal</a></li>
+          <li><a href="/large-tree-removal.html">Large Tree Removal</a></li>
+          <li><a href="/tree-care-prevention.html">Tree Trimming &amp; Pruning</a></li>
+          <li><a href="/palm-tree-trimming.html">Palm Tree Trimming &amp; Removal</a></li>
+          <li><a href="/storm-damage-clean-up.html">Storm Damage Clean Up</a></li>
+          <li><a href="/stump-removal.html">Stump Removal</a></li>
+        </ul>
+        <p>{phone_link("phone-link-lg")}</p>
+      </div>
+      {map_embed()}
     </div>
   </section>
-  {map_section()}
-  {cta_band("Send the address and a photo of the tree.", "Call about this property")}
 </main>"""
-    return shell(filename, main)
+    return shell(filename, main, with_tally=True)
 
 
 def render_about_page():

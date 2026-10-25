@@ -124,6 +124,35 @@ META = {
         "title": "Tree Service in Carlton, Port St. Lucie",
         "description": "Tree removal and trimming for homes in the Carlton area of Port St. Lucie. Call 772-492-4436.",
     },
+
+    "large-tree-removal.html": {
+        "title": "Large Tree Removal in Port St. Lucie, FL",
+        "description": "Remove oversized oaks, pines, and shade trees close to homes. Call 772-492-4436 for a large-tree estimate.",
+    },
+    "crane-assisted-tree-removal.html": {
+        "title": "Crane-Assisted Tree Removal in Port St. Lucie",
+        "description": "Crane lifts for trees that cannot be pieced down by rope alone. Call 772-492-4436.",
+    },
+    "hazardous-dangerous-tree-removal.html": {
+        "title": "Hazardous Tree Removal in Port St. Lucie",
+        "description": "Remove leaning, cracked, or hung trees before they fail. Call 772-492-4436.",
+    },
+    "oak-tree-removal.html": {
+        "title": "Oak Tree Removal in Port St. Lucie, FL",
+        "description": "Live oak and laurel oak removal near roofs and driveways. Call 772-492-4436.",
+    },
+    "dead-diseased-tree-removal.html": {
+        "title": "Dead and Diseased Tree Removal in Port St. Lucie",
+        "description": "Take down dead or failing trees before they drop on the house. Call 772-492-4436.",
+    },
+    "tree-removal-near-houses-buildings.html": {
+        "title": "Tree Removal Near Houses in Port St. Lucie",
+        "description": "Piece-down removals next to roofs, pools, and buildings. Call 772-492-4436.",
+    },
+    "tree-removal-for-construction.html": {
+        "title": "Tree Removal for Construction in Port St. Lucie",
+        "description": "Clear trees for builds, additions, and site access. Call 772-492-4436.",
+    },
     "se-morningside-blvd.html": {
         "title": "Tree Service near SE Morningside Blvd, Port St. Lucie",
         "description": "Tree removal and storm cleanup near SE Port St. Lucie Blvd and SE Morningside Blvd. Call 772-492-4436.",
@@ -137,12 +166,12 @@ HOME_INTRO = (
 
 HOME_CARDS = [
     ("tree-removal.html", "Tree Removal", "Remove a dead, leaning, or crowded tree before it reaches the house. We control the drop and haul the wood away.", "tree-removal.html"),
-    ("emergency-tree-removal.html", "Emergency Tree Removal", "Call when a tree is on the house, across the drive, or hung in another tree. We cut the hazard and clear a path.", "storm-damage-clean-up.html"),
-    ("palm-tree-trimming.html", "Palm Tree Trimming & Removal", "Heavy fronds and a dying palm trunk land on roofs and walks. We trim the crown or remove the palm.", "tree-care-prevention.html"),
+    ("emergency-tree-removal.html", "Emergency Tree Removal", "Call when a tree is on the house, across the drive, or hung in another tree. We cut the hazard and clear a path.", "emergency-tree-removal.html"),
+    ("palm-tree-trimming.html", "Palm Tree Trimming & Removal", "Heavy fronds and a dying palm trunk land on roofs and walks. We trim the crown or remove the palm.", "palm-tree-trimming.html"),
     ("tree-care-prevention.html", "Tree Trimming & Pruning", "Take weight off limbs that reach the roof and thin a crowded canopy. Storms have less wood to grab.", "tree-care-prevention.html"),
     ("stump-removal.html", "Stump Removal", "A stump left in the lawn catches the mower and trips people. We grind it down so grass or a new planting can go there.", "stump-removal.html"),
     ("storm-damage-clean-up.html", "Storm Damage Clean Up", "Wind drops limbs and whole trees onto homes. We cut what is on the structure and haul the debris away.", "storm-damage-clean-up.html"),
-    ("land-lot-clearing.html", "Land & Lot Clearing", "Overgrown lots hide brush, vines, and small trees that have to go before a fence or a build. We clear it and haul it off.", "brush-cleaning.html"),
+    ("land-lot-clearing.html", "Land & Lot Clearing", "Overgrown lots hide brush, vines, and small trees that have to go before a fence or a build. We clear it and haul it off.", "land-lot-clearing.html"),
     ("brush-cleaning.html", "Brush Cleaning", "Palm boots, leaves, and underbrush pile against the house and hold moisture. We clean the beds and take the debris away.", "brush-cleaning.html"),
     ("commercial-tree-service.html", "Commercial Tree Service", "Job sites and common areas need a crew that can work around cars. We schedule the cut and leave the site open.", "commercial-tree-service.html"),
 ]
@@ -436,11 +465,278 @@ SERVICE_PAGES = {
             ("Can you clear a commercial lot?", "Yes. Lot clearing for a build is listed as its own service because the volume is different from pruning a parking-lot oak. We can price both if the site needs both."),
         ],
     },
+    "large-tree-removal.html": {
+        "h1": "Large Tree Removal in Port St. Lucie, FL",
+        "eyebrow": "Large tree removal",
+        "lede": "A large oak or pine over a Port St. Lucie roof is not a Saturday DIY cut. Height, wood weight, and how close the trunk sits to the house decide whether the crew pieces the tree down or brings heavier equipment.",
+        "intro": "Large tree removal means a trunk and canopy that will not fit a simple drop. We plan the cut from the top, keep wood off the structure, and haul what you do not want left in the yard.",
+        "story_h2": "When a tree counts as large",
+        "story": "Homeowners usually mean a tree that is taller than the house, wider than a chipper can swallow whole, or heavy enough that a free fall would wreck a fence or pool cage. Live oaks, slash pines, and old shade trees in Port St. Lucie often fit that description once they reach the roof line.",
+        "when": [
+            "The canopy sits over the roof, the pool, or both driveways.",
+            "The trunk is too heavy to fell in one piece without hitting something.",
+            "Access is tight and every limb has to be lowered on a rope.",
+            "You want the wood hauled, not stacked for weeks in the yard.",
+        ],
+        "process": [
+            "Walk the tree, the drop zone, and how a truck or crane gets in.",
+            "Remove the canopy in sections and lower limbs away from the house.",
+            "Take the trunk down in short cuts once the weight is off.",
+            "Chip brush, load logs, and rake the work area.",
+        ],
+        "costs": [
+            "Height and trunk diameter.",
+            "Distance to the house, fence, pool cage, or power line.",
+            "Whether a crane or only climbing gear is required.",
+            "Haul-away of wood and whether stump grinding is included.",
+        ],
+        "seo_sections": [
+            ("Benefits of removing a large tree on purpose", "Waiting for wind to decide is how roofs get opened. A planned large-tree removal lets you choose the day, protect the house, and clear the stump line for grass or a new planting. It also ends the yearly worry of deadwood hanging over where people walk."),
+            ("Common problems with oversized yard trees", "Roots lift walks. Limbs rub tile and screens. Hollow trunks fail from the inside while the canopy still looks green. In sandy Treasure Coast soil, a tall tree with a shallow root plate can lean after heavy rain. Those are removal problems, not a light prune."),
+            ("How pricing works on large removals", "We do not publish a flat price. The estimate covers height, access, proximity to structures, equipment, haul-away, and stump work if you want it. A photo of the full tree and the house is the fastest way to start."),
+            ("What to expect on the day", "Cars move. Gates open. Pets stay inside. The crew works from the top down and keeps a clear exit for the truck. When the job is done, ask what is left: chips, a stump, or a clean grade."),
+        ],
+        "faqs": [
+            ("Can you remove a tree taller than my house?", "Yes. Height alone is not a blocker. The limiting factors are access for equipment, wires, and how close the trunk is to the structure. We piece large trees down instead of hoping for an open drop zone."),
+            ("Do large removals always need a crane?", "No. Many residential trees come down with climbing gear and ropes. A crane helps when the wood cannot be lowered safely by hand or the yard cannot hold a pile. We say which method fits after we see the site."),
+            ("Will you haul the wood?", "Yes if the estimate includes haul-away. Some owners keep rounds for firewood. Brush is normally chipped so the lawn is not buried in limbs."),
+            ("How long does a large removal take?", "Often one day for a single residential tree. A tree over a roof with poor access can take longer. The estimate includes the time the crew expects to need."),
+        ],
+    },
+    "crane-assisted-tree-removal.html": {
+        "h1": "Crane-Assisted Tree Removal in Port St. Lucie, FL",
+        "eyebrow": "Crane-assisted removal",
+        "lede": "When a tree sits over a roof, a pool cage, or a narrow side yard, lowering every piece by rope is slow and sometimes unsafe. A crane lifts sections clear so the house stays intact.",
+        "intro": "Crane-assisted tree removal is for trees that cannot be controlled with climbing gear alone. We use the lift when weight, reach, or a fragile structure makes a free-hand lower the wrong plan.",
+        "story_h2": "When a crane belongs on the job",
+        "story": "A crane is not a default for every backyard. It is the right tool when a large section has nowhere to land, when the trunk leans into a building, or when piecing everything by hand would leave the crew under hung wood too long. Port St. Lucie lots with screen enclosures and tight setbacks are common crane candidates.",
+        "when": [
+            "The tree leans into or over a roof or pool cage.",
+            "There is no safe place to lower heavy wood by rope.",
+            "A previous storm left hung sections that need a controlled lift.",
+            "The customer wants the wood off the lot the same day the crane is on site.",
+        ],
+        "process": [
+            "Confirm street and yard access for the crane truck.",
+            "Rig the section, cut, and lift clear of the structure.",
+            "Set wood where it can be cut and loaded without hitting the house.",
+            "Finish cleanup and note stump grinding if it was priced.",
+        ],
+        "costs": [
+            "Crane size and how long it has to stay on site.",
+            "Tree size and number of lifts.",
+            "Street permits or cone work if the truck blocks a lane.",
+            "Haul-away volume after the wood is on the ground.",
+        ],
+        "seo_sections": [
+            ("Benefits of crane work next to buildings", "The crane carries the weight. That reduces the chance a heavy trunk kicks into a roof or cage. It also shortens time spent working over fragile screens."),
+            ("Problems crane removal solves", "Hung limbs, trees with no drop zone, and trunks that would crush a fence if they spun. It does not replace calling the utility when the tree is in a power line."),
+            ("Pricing notes", "Crane days cost more than a climb-only job because the equipment and setup are part of the price. We only recommend it when the site needs it."),
+            ("Process and access", "We need firm ground or a street position for the outriggers. Soft lawn after rain can change the plan. Tell us about septic lids, irrigation, and neighbor fences before the truck arrives."),
+        ],
+        "faqs": [
+            ("Will the crane damage my yard?", "Outriggers need a stable pad. We protect what we can and tell you where the truck will sit before work starts. Soft ground may force a street setup instead."),
+            ("Can you use a crane near power lines?", "Not while the tree is energizing a line. The utility makes the line safe first. After that, we can plan the lift."),
+            ("Is every large tree a crane job?", "No. Many trees come down with ropes. We recommend a crane when the geometry of the yard makes it the safer option."),
+            ("Do I need to be home?", "Someone should unlock gates and move cars. You do not need to stand outside while the saws run."),
+        ],
+    },
+    "hazardous-dangerous-tree-removal.html": {
+        "h1": "Hazardous & Dangerous Tree Removal in Port St. Lucie, FL",
+        "eyebrow": "Hazardous tree removal",
+        "lede": "A cracked crotch, a new lean, or a dead crown over the walk is a hazard. Hazardous tree removal is about taking that failure risk down before wind finishes the job.",
+        "intro": "We remove trees that are already failing or clearly aimed at a target: the house, the drive, or a neighbor's roof. The goal is a controlled cut, not a surprise collapse.",
+        "story_h2": "What makes a tree hazardous",
+        "story": "Hazard is about the target as much as the tree. A dead pine over open pasture is different from a dead pine over a bedroom. Fungal conks, hanging limbs, split trunks, and soil heave after storms are common Treasure Coast warning signs.",
+        "when": [
+            "The trunk is cracked, hollow, or newly leaning toward a structure.",
+            "A large limb is hung and could drop on a walk or car.",
+            "The crown is mostly dead while the tree still stands.",
+            "Roots have heaved and the tree is no longer stable after rain.",
+        ],
+        "process": [
+            "Assess targets, lean, and whether wires are involved.",
+            "Secure the work zone and keep people clear.",
+            "Remove the hazardous wood in a controlled sequence.",
+            "Clear debris so the hazard is gone, not just moved.",
+        ],
+        "costs": [
+            "How unstable the tree already is.",
+            "What it would hit if it failed during the cut.",
+            "Access and whether emergency timing is required.",
+            "Cleanup and stump options after the hazard is down.",
+        ],
+        "seo_sections": [
+            ("Why hazardous trees should not wait", "A failing tree does not get safer with another thunderstorm. Early removal costs less than roof repair, and it keeps the crew from working under a tree that is already moving."),
+            ("Common Florida failure modes", "Uprooting in wet sand, palm spear failure, pine beetle kill, and oaks with included bark that split in wind. Photos help, but the final call is made on site."),
+            ("Pricing and urgency", "Unstable trees can cost more because the sequence has to be slower and more protected. Call with the address and what you see. Do not stand under the hanging wood."),
+            ("After the cut", "Ask about stump grinding and whether neighboring trees need a look. One failure sometimes points to a shared root or wind exposure problem."),
+        ],
+        "faqs": [
+            ("Is a leaning tree always dangerous?", "Not always. A long-standing lean can be stable. A new lean, soil cracks, or a soft trunk is different. Send a photo and we will tell you if it looks urgent."),
+            ("What if the tree is on the neighbor's lot?", "We need permission from the owner to cut their tree. Limbs over your side can sometimes be addressed from your property. Property lines matter before the saw starts."),
+            ("Do you handle trees on houses already?", "Yes. That is emergency removal. Keep clear, call us, and call the utility if wires are involved."),
+            ("Can pruning fix a hazardous tree?", "Only if the hazard is a single limb and the trunk is sound. A hollow or uprooting tree is a removal."),
+        ],
+    },
+    "oak-tree-removal.html": {
+        "h1": "Oak Tree Removal in Port St. Lucie, FL",
+        "eyebrow": "Oak tree removal",
+        "lede": "Live oaks and laurel oaks shade a lot of Port St. Lucie yards, and they also reach roofs, lift walks, and drop heavy limbs in summer storms. Oak removal is planned around that dense wood and wide canopy.",
+        "intro": "Oak tree removal means taking down a hardwood that often sits closer to the house than people realize. We piece the canopy, protect the structure, and haul the dense wood that oaks leave behind.",
+        "story_h2": "Oaks on local lots",
+        "story": "Many subdivision oaks were planted for shade and then outgrew the setback. Live oaks spread wide. Laurel oaks grow fast and fail earlier. Either one over a tile roof or a pool cage needs a controlled take-down, not a hope-for-the-best felling cut.",
+        "when": [
+            "An oak limb is rubbing the roof or cage.",
+            "The trunk is hollow, split, or dropping large deadwood.",
+            "Roots are lifting the driveway or patio.",
+            "You are remodeling and the oak is in the footprint.",
+        ],
+        "process": [
+            "Map the canopy over the house and neighbor lines.",
+            "Remove limbs in sections with ropes where needed.",
+            "Drop or lower the trunk once the weight is off.",
+            "Haul oak wood and discuss stump grinding for the flare.",
+        ],
+        "costs": [
+            "Canopy spread and trunk size.",
+            "Proximity to roofs and cages.",
+            "Density of oak wood for haul-away.",
+            "Stump grinding of a wide root flare.",
+        ],
+        "seo_sections": [
+            ("Benefits of removing a failing oak", "You stop chasing falling limbs every storm season and protect the roof. Clearing a bad oak also opens light for grass and safer room for a replacement planting farther from the house."),
+            ("Problems specific to oaks", "Heavy horizontal limbs, included bark unions, and root flares that heave concrete. Oaks also need permits more often when they meet protected-size rules inside the city."),
+            ("Pricing factors", "Spread matters as much as height. An oak over two roofs costs more than the same trunk in an open backyard."),
+            ("Permit note for Port St. Lucie", "Protected trees can require a city permit. We will point out what looks protected. Confirm with Planning and Zoning or your HOA before a regulated oak comes down."),
+        ],
+        "faqs": [
+            ("Can you remove a live oak near my house?", "Yes, by dismantling it. Live oaks rarely have a clear drop zone in a subdivision yard."),
+            ("Do oak removals need a permit?", "Inside Port St. Lucie, size and species can trigger protection rules. We flag likely protected trees; the city or HOA has the final word."),
+            ("Will you grind the oak stump?", "Yes if it is in the estimate. Oak flares are wide, so grinding takes longer than a slender pine stump."),
+            ("Can you prune instead?", "If the trunk is sound and the issue is clearance, pruning may be enough. A hollow or uprooting oak should come out."),
+        ],
+    },
+    "dead-diseased-tree-removal.html": {
+        "h1": "Dead & Diseased Tree Removal in Port St. Lucie, FL",
+        "eyebrow": "Dead and diseased trees",
+        "lede": "A dead crown, beetle kill, or soft trunk will not heal with fertilizer. Dead and diseased tree removal gets the failure out of the air before it lands on the house.",
+        "intro": "We take down trees that have already died or are clearly failing from disease or pests. Standing dead wood is brittle, so the cut sequence is careful.",
+        "story_h2": "Why dead trees are a different job",
+        "story": "Live wood holds climbing gear and ropes predictably. Dead wood can snap without warning. That changes how we rig and how much we remove from the top before trusting a section. Treasure Coast pines and palms show this often after drought, beetles, or storm injury.",
+        "when": [
+            "The canopy is brown and does not flush in spring.",
+            "Bark is falling, fungi are fruiting, or the trunk sounds hollow.",
+            "A palm spear is loose or the bud is rotten.",
+            "Neighbors are worried about a dead tree on the line.",
+        ],
+        "process": [
+            "Confirm the tree is clear of power lines.",
+            "Remove brittle wood from the top with extra care.",
+            "Lower or drop the trunk once it is safe to do so.",
+            "Haul debris so pests and spores are not left in a pile against the house.",
+        ],
+        "costs": [
+            "How brittle and hung the wood already is.",
+            "Targets under the tree.",
+            "Access for trucks.",
+            "Stump grinding and haul-away.",
+        ],
+        "seo_sections": [
+            ("Benefits of removing dead trees promptly", "Dead trees drop limbs without a storm. Taking them down protects roofs and keeps the yard usable. It also removes habitat for pests that can move to nearby trees."),
+            ("Common local disease and pest signs", "Pine beetle pitch tubes, palm bud rot, oak decline symptoms, and fungal conks on the trunk. We are a removal crew, not a lab. If the tree is clearly dead or unsafe, removal is the practical step."),
+            ("Pricing", "Brittle trees can take longer because every cut has to account for wood that may fail early. Photos of the whole tree help the estimate."),
+            ("After removal", "Consider whether nearby trees of the same species look stressed. Stump grinding stops sprouts and clears the lawn."),
+        ],
+        "faqs": [
+            ("Can a diseased tree be saved?", "Sometimes with an arborist treatment plan. If the trunk is soft, the spear is gone, or the lean is new, removal is usually the honest answer."),
+            ("Is a dead palm dangerous?", "Yes. Dead palms can snap mid-trunk. Do not wait for hurricane season."),
+            ("Will you remove only the dead tree and leave the others?", "Yes. Mark keepers. We cut what is in the estimate."),
+            ("Do you grind dead stumps?", "Yes when priced. Dead roots can still sprout or leave a hole in the lawn."),
+        ],
+    },
+    "tree-removal-near-houses-buildings.html": {
+        "h1": "Tree Removal Near Houses & Buildings in Port St. Lucie, FL",
+        "eyebrow": "Trees near structures",
+        "lede": "A tree against a roof, garage, or commercial wall has no room to fall. Removal near houses and buildings means dismantling the tree so wood never free-falls onto the structure.",
+        "intro": "We specialize in piece-down removals beside homes, pool cages, sheds, and small commercial buildings. Clearance is measured in feet, not acres.",
+        "story_h2": "Working next to structures",
+        "story": "Port St. Lucie setbacks put many shade trees within limb-reach of tile roofs and lanais. The safe method is top-down removal with ropes or a crane when needed. Open-yard felling is the wrong tool when a building is in the lean.",
+        "when": [
+            "Limbs are on or over the roof already.",
+            "The trunk is within a few feet of a wall or cage.",
+            "A tree sits between two buildings with no drop zone.",
+            "You need the tree gone before a roof or addition project.",
+        ],
+        "process": [
+            "Protect windows, cages, and landscaping where practical.",
+            "Remove the canopy over the structure first.",
+            "Lower trunk sections away from the building.",
+            "Clean the work zone so contractors can start if that is next.",
+        ],
+        "costs": [
+            "How close the trunk is to the building.",
+            "Roof pitch and cage complexity.",
+            "Need for a crane versus climbing gear.",
+            "Haul-away and stump work in a tight yard.",
+        ],
+        "seo_sections": [
+            ("Benefits of professional near-structure removal", "You avoid the common mistake of notching a tree and hoping it falls away from the house. Controlled removal protects roofs, screens, and fences."),
+            ("Common problems", "Limbs growing into gutters, trunks planted too close decades ago, and trees that settled toward the house after storms. DIY felling in these spots is how walls get hit."),
+            ("Pricing", "Tight access and protection time are the cost drivers. A tree five feet from a wall costs more than the same tree in an open backyard."),
+            ("Coordination with other trades", "If a roofer or builder is next, tell us the schedule. We can clear the tree and leave access open."),
+        ],
+        "faqs": [
+            ("Can you work over a pool cage?", "Yes, with care. Panels and screens are easy to damage, so wood is lowered, not dropped."),
+            ("What if the tree is touching the roof?", "We remove contact wood first so the roof is clear, then finish the trunk."),
+            ("Do you tarp damaged roofs?", "We remove the tree. Roof sealing is a roofer's job after the wood is off."),
+            ("Can the stump stay?", "Yes if you want. Grinding in a tight side yard may need a second visit with a smaller machine."),
+        ],
+    },
+    "tree-removal-for-construction.html": {
+        "h1": "Tree Removal for Construction in Port St. Lucie, FL",
+        "eyebrow": "Construction site clearing",
+        "lede": "Builds, additions, and driveway expansions need trees out of the footprint and the access path. Construction tree removal clears that wood on a schedule your contractor can work around.",
+        "intro": "We remove trees and grind stumps so graders, trucks, and foundation work can start. Scope follows the survey and the builder's stakeout, not a guess from the street.",
+        "story_h2": "Clearing for a build",
+        "story": "Construction removal is different from a single hazard tree. You may need several trees down, brush cleared, and stumps gone below grade. Inside Port St. Lucie, protected trees on the parcel can still need permits even when the lot is vacant.",
+        "when": [
+            "A survey shows trees in the building pad or drive.",
+            "Trucks cannot reach the site until a tree is gone.",
+            "An addition needs clearance off an existing house.",
+            "The builder asked for stumps out, not just trunks cut.",
+        ],
+        "process": [
+            "Review the stakes, survey, and trees marked to keep.",
+            "Remove trees in the cut list and protect keepers.",
+            "Grind or remove stumps as specified.",
+            "Haul debris so the site is open for the next trade.",
+        ],
+        "costs": [
+            "Number and size of trees.",
+            "Stump specification from the builder.",
+            "Access for trucks on a raw lot.",
+            "Permit needs for protected trees.",
+        ],
+        "seo_sections": [
+            ("Benefits of scheduling tree work before dirt work", "Equipment shows up to a clear pad instead of waiting on saws. You also avoid discovering a protected trunk after the crew is already mobilized."),
+            ("Common construction clearing problems", "Trees marked save versus remove, stumps left too high for grading, and debris piles in the truck path. We price the scope the builder actually needs."),
+            ("Pricing", "Per-tree and per-stump counts matter. Lot clearing rates apply when brush and saplings fill the parcel beyond a few specimen trees."),
+            ("Permits and keepers", "Flag protected trees early. Cutting the wrong oak can stop a project. We work from your marked list."),
+        ],
+        "faqs": [
+            ("Can you work from a builder's tree survey?", "Yes. Send the plan and the mark legend. We cut what is listed."),
+            ("Do you grind stumps for slab work?", "Yes when specified. Depth matters for graders and footers."),
+            ("Is this the same as land clearing?", "Related. Construction removal often pairs with lot clearing when brush fills the same pad. We can price both."),
+            ("How far ahead should we book?", "As soon as stakes are in. Storm season and other removals fill the calendar."),
+        ],
+    },
+
 }
 
 LOCATION_PAGES = {
     "port-st-lucie-flordia.html": {
-        "h1": "Tree Service in Port St. Lucie",
+        "h1": "Tree Removal in Port St. Lucie",
         "paragraphs": [
             "Most calls in Port St. Lucie are a tree too close to the house: an oak over the roof, a pine with deadwood, or a queen palm dropping fronds on the walk. Sandy soil and summer wind pull on shallow roots, so a lean is worth a look before hurricane season.",
             "Inside the city, a protected tree is generally 12 inches or more at chest height, or a native palm with at least 10 feet of clear trunk. Those need a permit from Planning and Zoning before they are removed. We will point out what looks protected. You, or your HOA, should confirm it with the city.",
@@ -448,7 +744,7 @@ LOCATION_PAGES = {
         ],
     },
     "stuart-flordia.html": {
-        "h1": "Tree Service in Stuart",
+        "h1": "Tree Removal in Stuart",
         "paragraphs": [
             "Stuart yards often have older oaks and other shade trees grown in over the roof. The work is usually clearance and deadwood, or a full removal when the trunk is hollow and the house is in the lean.",
             "Martin County and the City of Stuart do not use the Port St. Lucie permit rule. Ask the city or county before a large tree comes down, and check the HOA if the house is in one. We will not treat a Stuart oak as if it were a Port St. Lucie permit.",
@@ -456,7 +752,7 @@ LOCATION_PAGES = {
         ],
     },
     "palm-city-florida.html": {
-        "h1": "Tree Service in Palm City",
+        "h1": "Tree Removal in Palm City",
         "paragraphs": [
             "Palm City lots are residential, often with shade trees that have reached the roof and palms along the property line. This is not the same work as a Port St. Lucie street tree, and the old page that described Palm City as the city of Port St. Lucie was wrong.",
             "A limb on the roof, a dead pine, or a stump in the lawn is the usual call. Access matters: a fenced backyard with no gate for a truck changes how the tree comes down.",
@@ -464,7 +760,7 @@ LOCATION_PAGES = {
         ],
     },
     "fort-pierce-florida.html": {
-        "h1": "Tree Service in Fort Pierce",
+        "h1": "Tree Removal in Fort Pierce",
         "paragraphs": [
             "Fort Pierce gets the wind off the Indian River and the Atlantic. Dead limbs and weak palms fail here in thunderstorms, not only in hurricanes. If a tree is on the house, call. If it is in a power line, call the utility first.",
             "Older neighborhoods have large trees close to small setbacks. Those come down in pieces, not in one drop across the yard.",
@@ -472,7 +768,7 @@ LOCATION_PAGES = {
         ],
     },
     "florida-ridge-fl.html": {
-        "h1": "Tree Service in Florida Ridge",
+        "h1": "Tree Removal in Florida Ridge",
         "paragraphs": [
             "Florida Ridge properties are often larger than a Port St. Lucie subdivision lot. The calls are overgrown edges, pines with deadwood, and stumps left from an older clearing.",
             "The area is unincorporated St. Lucie County, between Port St. Lucie and Fort Pierce. County removal rules are not the city permit packet. Check with the county before a large tree is taken out.",
@@ -480,7 +776,7 @@ LOCATION_PAGES = {
         ],
     },
     "hobo-sound-fl.html": {
-        "h1": "Tree Service in Hobe Sound",
+        "h1": "Tree Removal in Hobe Sound",
         "paragraphs": [
             "Hobe Sound is on the coast in Martin County. Salt wind and hurricanes work on pines, oaks, and palms, and a tree that was fine in June can be on the roof in October. The page address says Hobo because that is the existing URL. The town is Hobe Sound.",
             "We remove hazardous trees, trim palms, and clear storm debris. We do not cut a tree that is in a power line.",
@@ -488,7 +784,7 @@ LOCATION_PAGES = {
         ],
     },
     "vero-beach-florida.html": {
-        "h1": "Tree Service in Vero Beach",
+        "h1": "Tree Removal in Vero Beach",
         "paragraphs": [
             "Vero Beach houses on the mainland and the barrier island deal with salt wind, palms, and shade trees in small yards. Fronds on the roof and a dead trunk near the house are the calls we want before a storm, not after one.",
             "Indian River County and the City of Vero Beach set their own tree rules. A Port St. Lucie permit does not cover a tree in Vero Beach.",
@@ -496,7 +792,7 @@ LOCATION_PAGES = {
         ],
     },
     "jupiter-florida.html": {
-        "h1": "Tree Service in Jupiter",
+        "h1": "Tree Removal in Jupiter",
         "paragraphs": [
             "Jupiter homes sit close to palms and older shade trees, with the coast on one side and neighborhoods that flood with wind-blown debris on the other. Clearance off the roof and removal of a failing tree are the useful jobs.",
             "This is Palm Beach County. Do not use a Port St. Lucie permit checklist here. Ask the town or your HOA before a regulated tree is removed.",
@@ -504,7 +800,7 @@ LOCATION_PAGES = {
         ],
     },
     "palm-beach-gardens-florida.html": {
-        "h1": "Tree Service in Palm Beach Gardens",
+        "h1": "Tree Removal in Palm Beach Gardens",
         "paragraphs": [
             "Palm Beach Gardens calls are often palms along a wall, shade trees over a tile roof, and common-area trees an HOA wants pruned before hurricane season. The work has to respect the association's list of trees, not a guess from the curb.",
             "The city is in Palm Beach County and has its own landscape rules. We will not swap in another city's ordinance.",
@@ -512,7 +808,7 @@ LOCATION_PAGES = {
         ],
     },
     "sebastian-florida.html": {
-        "h1": "Tree Service in Sebastian",
+        "h1": "Tree Removal in Sebastian",
         "paragraphs": [
             "Sebastian lots along the Indian River and in town deal with coastal wind, palms, and trees that have outgrown the yard. A hanging limb over the roof is worth cutting on a calm day.",
             "Sebastian is in Indian River County. Tree rules are local. They are not the Port St. Lucie protected-tree permit.",
@@ -520,7 +816,7 @@ LOCATION_PAGES = {
         ],
     },
     "riviera-beach-fl.html": {
-        "h1": "Tree Service in Riviera Beach",
+        "h1": "Tree Removal in Riviera Beach",
         "paragraphs": [
             "Riviera Beach is coastal Palm Beach County. Wind and salt take palms and older yard trees, and houses often have little room to drop a trunk. Removals here are usually pieced down.",
             "Check the city's tree rules and any housing authority or HOA before a large tree is cut. We will not apply a Port St. Lucie permit to this city.",
@@ -528,7 +824,7 @@ LOCATION_PAGES = {
         ],
     },
     "royal-palm-beach-florida.html": {
-        "h1": "Tree Service in Royal Palm Beach",
+        "h1": "Tree Removal in Royal Palm Beach",
         "paragraphs": [
             "Royal Palm Beach is inland, in western Palm Beach County. The trees are subdivision oaks, pines, and palms, often planted close to the house and the sidewalk. Less salt does not mean less wind in a hurricane.",
             "HOA architectural rules are common here and can be stricter than the city. Send the association's tree note with the photos if you already have one.",
@@ -536,7 +832,7 @@ LOCATION_PAGES = {
         ],
     },
     "mico-florida.html": {
-        "h1": "Tree Service in Mico",
+        "h1": "Tree Removal in Mico",
         "paragraphs": [
             "This page is for Mico. The old copy called it a beach town and reused the same paragraph as other cities. That was not a description of the properties. If your job is a hazardous tree, a palm, a stump, or storm debris, call and we will say whether we can reach the address.",
             "We do not apply Port St. Lucie permit rules to a different jurisdiction. Ask the local building or zoning office before a large tree is removed.",
@@ -544,15 +840,16 @@ LOCATION_PAGES = {
         ],
     },
     "portstluciecarlton.html": {
-        "h1": "Tree Service in Carlton, Port St. Lucie",
+        "h1": "Tree Removal in Carlton, Port St. Lucie",
         "paragraphs": [
             "Carlton is a Port St. Lucie neighborhood, so the trees are the same problem as the rest of the city: close to the house, close to the neighbor, and in sandy soil. Roof clearance and deadwood are the calls that prevent a storm from deciding for you.",
             "City of Port St. Lucie permit rules can apply to protected trees here. A trunk of about 12 inches or more, or a native palm with a tall clear trunk, should be checked with Planning and Zoning or the HOA before it is cut.",
             "We work inside fenced yards when there is a gate the equipment can use. Tell us if the only access is through the house.",
         ],
     },
+
     "se-morningside-blvd.html": {
-        "h1": "Tree Service near SE Morningside Blvd",
+        "h1": "Tree Removal near SE Morningside Blvd",
         "paragraphs": [
             "SE Port St. Lucie Boulevard and SE Morningside Boulevard is a busy corner with homes, businesses, and trees that drop limbs toward parking and roofs. The useful job is getting that wood down on purpose, and clearing it when a storm has already put it in the way.",
             "Because this is inside Port St. Lucie, protected trees can require a city permit. A commercial lot and a backyard are priced differently because the crew has to work around traffic and customers.",
